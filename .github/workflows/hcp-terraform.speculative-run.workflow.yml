@@ -15,14 +15,14 @@ on:
       - main
     ## RECOMMENDED: Specify to only run this workflow file when terraform configuration has changed.
     paths:
-      - "<<INPUT REQUIRED>>" ## Example: 'terraform/**.tf'
+      - "terraform/**.tf" ## Example: 'terraform/**.tf'
 
 ## Add shared Environment Variables across jobs here ##
 env:
-  TF_CLOUD_ORGANIZATION: "<<INPUT REQUIRED>>" ## Name of your existing HCP Terraform Organization. RECOMMENDED: use repository variables. ex. "${{ vars.TF_CLOUD_ORGANIZATION }}"
-  TF_API_TOKEN: "<<INPUT REQUIRED>>" ## HCP Terraform API Token. RECOMMENDED: replace with github action secrets. ex. "${{ secrets.TF_API_TOKEN }}"
-  TF_WORKSPACE: "<<INPUT REQUIRED>>" ## Name of your existing workspace in HCP Terraform.
-  CONFIG_DIRECTORY: "<<INPUT REQUIRED>>" ## Directory of your Terraform Configuration. Relative to the project root.
+  TF_CLOUD_ORGANIZATION: "Ting_HCP_Demo" ## Name of your existing HCP Terraform Organization. RECOMMENDED: use repository variables. ex. "${{ vars.TF_CLOUD_ORGANIZATION }}"
+  TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}" ## HCP Terraform API Token. RECOMMENDED: replace with github action secrets. ex. "${{ secrets.TF_API_TOKEN }}"
+  TF_WORKSPACE: "GitHub_Actions_Demo" ## Name of your existing workspace in HCP Terraform.
+  CONFIG_DIRECTORY: "./terraform/" ## Directory of your Terraform Configuration. Relative to the project root.
   ## Additional env variables
   # TF_LOG: DEBUG ## Helpful for troubleshooting
   # TF_MAX_TIMEOUT: "30m" ## If you wish to override the default "1h"
